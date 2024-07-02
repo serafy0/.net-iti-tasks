@@ -37,6 +37,9 @@ namespace task3
             lowerRight = _lowerRight;
         }
 
-        public void DrawRect() { }
+        public void DrawRect()
+        {
+            Console.WriteLine($"rect with upperleft={upperLeft} and lowerRight={lowerRight}");
+        }
     }
 }

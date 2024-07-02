@@ -1,5 +1,3 @@
-using System;
-
 namespace task2
 {
     public class Employee
@@ -17,19 +15,19 @@ namespace task2
             salary = _salary;
         }
 
-        public string getSNN(string _ssn)
+        public string getSNN()
         {
             return ssn;
         }
 
-        public int getSalary(int _salary)
+        public int getSalary()
         {
             return salary;
         }
 
         public string toString()
         {
-            return $"{ssn}: {salary}";
+            return $"ssn:{ssn}: salary:{salary}";
         }
     }
 }

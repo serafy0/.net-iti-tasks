@@ -28,14 +28,14 @@ namespace task3
         public Point()
         {
             x = y = 0;
-            Console.WriteLine("Point def ctor");
+            Console.WriteLine("Point addede");
         }
 
         public Point(int _x, int _y)
         {
             x = _x;
             y = _y;
-            Console.WriteLine("Point 2p ctor");
+            Console.WriteLine("Point 2D added");
         }
     }
 }
