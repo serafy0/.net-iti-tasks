@@ -4,6 +4,8 @@ namespace task1
     {
         private int front;
 
+        // private int rear;
+
         public void printQueue()
         {
             for (int i = 0; i < size; i++)
@@ -23,16 +25,59 @@ namespace task1
             return arr[front];
         }
 
-        public void enqueue(int value) { }
+        public void enqueue(int value)
+        {
+            if (IsFull())
+            {
+                throw new OverflowException("Queue is full");
+            }
+            if (front < 0)
+            {
+                front++;
+            }
+            counter = (counter + 1) % size; //circular
+
+            arr[counter] = value;
+            Console.WriteLine($"added {value} to index#{counter}");
+        }
+
+        public int dequque()
+        {
+            if (IsEmpty())
+            {
+                throw new Exception("queue is Empty");
+            }
+
+            int value = arr[front];
+            if (front == counter)
+            {
+                front = -1;
+                counter = -1;
+            }
+            else
+            {
+                front = (front + 1) % size; //circular
+            }
+
+            return value;
+        }
 
         public bool IsFull()
         {
-            return counter == size - 1;
+            if (front == 0 && counter == this.size - 1)
+            {
+                return true;
+            }
+            else if (front == counter + 1) //if front is right behind the rear
+            {
+                return true;
+            }
+            return false;
         }
 
         public bool IsEmpty()
         {
-            return (counter == -1);
+            return (front == -1);
         }
     }
 }

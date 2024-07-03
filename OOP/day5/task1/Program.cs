@@ -26,6 +26,8 @@ class Program
 
         test2.enqueue(4);
         test2.enqueue(5);
+        test2.enqueue(3);
+
         Console.WriteLine($"peak is at {test2.peek()}");
 
         test2.dequeue();
