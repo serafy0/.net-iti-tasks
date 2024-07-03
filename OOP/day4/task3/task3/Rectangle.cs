@@ -27,19 +27,25 @@ namespace task3
 
         public Rectangle()
         {
+            Console.WriteLine("a rectangle is being created");
+
             upperLeft = null;
             lowerRight = null;
         }
 
         public Rectangle(Point _upperLeft, Point _lowerRight)
         {
+            Console.WriteLine("a rectangle is being created");
+
             upperLeft = _upperLeft;
             lowerRight = _lowerRight;
         }
 
         public void DrawRect()
         {
-            Console.WriteLine($"rect with upperleft={upperLeft} and lowerRight={lowerRight}");
+            Console.WriteLine(
+                $"rectangle is being drawn with {upperLeft.toString()} and {lowerRight.toString()}"
+            );
         }
     }
 }

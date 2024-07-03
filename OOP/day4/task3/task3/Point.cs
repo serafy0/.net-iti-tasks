@@ -28,7 +28,7 @@ namespace task3
         public Point()
         {
             x = y = 0;
-            Console.WriteLine("Point addede");
+            Console.WriteLine("Point added");
         }
 
         public Point(int _x, int _y)
@@ -36,6 +36,11 @@ namespace task3
             x = _x;
             y = _y;
             Console.WriteLine("Point 2D added");
+        }
+
+        public string toString()
+        {
+            return $"({x}, {y})";
         }
     }
 }
