@@ -6,53 +6,6 @@ class Program
 {
     static void Main(string[] args)
     {
-        Employee[] arr = [new Employee(), new Employee(), new Employee()];
-        arr[0].setSNN("0");
-        arr[0].setSalary(1000);
-        arr[1].setSNN("1");
-        arr[1].setSalary(2000);
-
-        arr[1].setSNN("2");
-        arr[2].setSalary(3000);
-
-        Console.WriteLine(arr[0].toString());
-        Console.WriteLine(arr[1].toString());
-        Console.WriteLine(arr[2].toString());
-        //-----------------
-        // Console.WriteLine($"how many employees do you want to add?");
-
-        // int size = int.Parse(Console.ReadLine());
-
-        // int counter = 0;
-        // while (counter < userArray.Length)
-        // {
-        //     Console.WriteLine($"add employee number {counter}");
-        //     Console.WriteLine("add snn");
-        //     string newSnn = Console.ReadLine();
-        //     if (employeeExsistsInArray(userArray, newSnn))
-        //     {
-        //         Console.WriteLine("the array has an employee withy that snn. try again ");
-        //         continue;
-        //     }
-        //     else
-        //     {
-        //         userArray[counter].setSNN(newSnn);
-        //         Console.WriteLine($"add {userArray[counter].getSNN()}'s salary:");
-
-        //         int newSal = int.Parse(Console.ReadLine());
-
-        //         userArray[counter].setSalary(newSal);
-        //         counter++;
-        //     }
-        // }
-
-        // for (int i = 0; i < userArray.Length; i++)
-        // {
-        //     Console.WriteLine($"number{i}: {userArray[i].toString()}");
-        // }
-
-        //----
-        // Dictionary<string,Employee> = new Dictionary<string, Employee>{}
         Employee[] userArray = new Employee[13];
         for (int i = 0; i < userArray.Length; i++)
         {
