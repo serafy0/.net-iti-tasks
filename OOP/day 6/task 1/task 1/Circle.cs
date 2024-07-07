@@ -10,7 +10,7 @@ namespace task_1
 
         public override double ClacArea()
         {
-            return Math.PI * dim2 * dim1;
+            return Math.PI * dim1 * dim1;
         }
     }
 }
