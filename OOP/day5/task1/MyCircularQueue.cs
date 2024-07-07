@@ -4,16 +4,7 @@ namespace task1
     {
         private int front;
 
-        // private int rear;
-
-        public void printQueue()
-        {
-            for (int i = 0; i < size; i++)
-            {
-                Console.WriteLine(arr[i]);
-            }
-        }
-
+        // counter is inherited
         public MyCircularQueue(int _size = 5)
             : base(_size)
         {
@@ -35,7 +26,7 @@ namespace task1
             {
                 front++;
             }
-            counter = (counter + 1) % size; //circular
+            counter = (counter + 1) % size; //circular formula
 
             arr[counter] = value;
             Console.WriteLine($"added {value} to index#{counter}");

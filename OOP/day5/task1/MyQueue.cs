@@ -17,7 +17,6 @@ namespace task1
         public MyQueue(int _size = 5) //defaults to 5
         {
             size = _size;
-            // topOfStack = 0;
             arr = new int[size];
             counter = -1;
             Console.WriteLine($"array {size}");
@@ -29,7 +28,6 @@ namespace task1
             if (!IsFull())
             {
                 arr[++counter] = value;
-                // counter++;
                 Console.WriteLine($"counter added {arr[counter]} at {counter}");
             }
             else
@@ -44,17 +42,14 @@ namespace task1
             {
                 throw new Exception("queue is empty");
             }
+            int temp = arr[0];
             for (int i = 0; i < counter; i++)
             {
-                int temp = arr[i + 1];
-                arr[i + 1] = arr[i];
-                arr[i] = temp;
+                arr[i] = arr[i + 1];
             }
-            int value = arr[counter];
-            arr[counter] = 0;
 
             counter--;
-            return value;
+            return temp;
         }
 
         public bool IsFull()

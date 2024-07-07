@@ -6,18 +6,19 @@ class Program
     {
         MyQueue teatQueue = new MyQueue(5);
 
-        teatQueue.enqueue(1);
-        teatQueue.enqueue(2);
-        teatQueue.enqueue(3);
+        // teatQueue.enqueue(1);
+        // teatQueue.enqueue(2);
+        // teatQueue.enqueue(3);
 
-        teatQueue.enqueue(4);
-        teatQueue.enqueue(5);
-        Console.WriteLine($"peak is at {teatQueue.peek()}");
+        // teatQueue.enqueue(4);
+        // teatQueue.enqueue(5);
+        // Console.WriteLine($"peak is at {teatQueue.peek()}");
 
-        teatQueue.dequeue();
-        teatQueue.dequeue();
+        // teatQueue.dequeue();
+        // // teatQueue.dequeue();
+        // teatQueue.enqueue(6);
 
-        teatQueue.printQueue();
+        // teatQueue.printQueue();
 
         MyCircularQueue test2 = new MyCircularQueue(8);
         test2.enqueue(1);
