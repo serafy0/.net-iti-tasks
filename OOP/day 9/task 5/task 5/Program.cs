@@ -15,5 +15,16 @@ class Program
 
         Duration D4 = new Duration(666);
         Console.WriteLine(D4.ToString());
+
+        Duration d1 = D1 + D2;
+        Console.WriteLine(d1);
+
+        Console.WriteLine(++d1);
+        Console.WriteLine(d1++);
+        Console.WriteLine(d1++);
+
+        DateTime Obj = (DateTime)D1;
+
+        Console.WriteLine(Obj);
     }
 }

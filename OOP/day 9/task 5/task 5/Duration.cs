@@ -7,6 +7,13 @@ class Duration
     public int Minutes { get; set; }
     public int Seconds { get; set; }
 
+    public Duration()
+    {
+        Hours = 0;
+        Minutes = 0;
+        Seconds = 0;
+    }
+
     public Duration(int _hours, int _minutes, int _seconds)
     {
         while (_seconds >= 60)
@@ -66,5 +73,97 @@ class Duration
     public override string ToString()
     {
         return $"Hours:{Hours}, Minutes: {Minutes}, Seconds: {Seconds}";
+    }
+
+    public static Duration operator +(Duration right, Duration left)
+    {
+        return new Duration(
+            right.Hours + left.Hours,
+            right.Minutes + left.Minutes,
+            right.Seconds + left.Seconds
+        );
+    }
+
+    public static Duration operator +(int right, Duration left)
+    {
+        return new Duration(left.Hours, left.Minutes, right + left.Seconds);
+    }
+
+    public static Duration operator +(Duration right, int left)
+    {
+        return new Duration(right.Hours, right.Minutes, right.Seconds + left);
+    }
+
+    public static Duration operator ++(Duration _duration)
+    {
+        return new Duration(_duration.Hours, _duration.Minutes + 1, _duration.Seconds);
+    }
+
+    public static Duration operator --(Duration _duration)
+    {
+        return new Duration(_duration.Hours, _duration.Minutes - 1, _duration.Seconds);
+    }
+
+    public static bool operator >(Duration right, Duration left)
+    {
+        return right.getSeconds() > left.getSeconds();
+    }
+
+    public static bool operator <(Duration right, Duration left)
+    {
+        return right.getSeconds() < left.getSeconds();
+    }
+
+    public static bool operator >=(Duration right, Duration left)
+    {
+        return right.getSeconds() >= left.getSeconds();
+    }
+
+    public static bool operator <=(Duration right, Duration left)
+    {
+        return right.getSeconds() <= left.getSeconds();
+    }
+
+    public static Duration operator -(Duration right, Duration left)
+    {
+        return new Duration(
+            right.Hours - left.Hours,
+            right.Minutes - left.Minutes,
+            right.Seconds - left.Seconds
+        );
+    }
+
+    public static Duration operator *(Duration right, Duration left)
+    {
+        return new Duration(
+            right.Hours * left.Hours,
+            right.Minutes * left.Minutes,
+            right.Seconds * left.Seconds
+        );
+    }
+
+    public static Duration operator /(Duration right, Duration left)
+    {
+        return new Duration(
+            right.Hours / left.Hours,
+            right.Minutes / left.Minutes,
+            right.Seconds / left.Seconds
+        );
+    }
+
+    public static explicit operator DateTime(Duration _duration)
+    {
+        DateTime _dataTime = new();
+
+        return _dataTime.AddSeconds(_duration.getSeconds());
+        ;
+    }
+
+    private int getSeconds()
+    {
+        int newMinutes = Minutes + (Hours * 60);
+        int newSeconds = Seconds + (newMinutes * 60);
+
+        return newSeconds;
     }
 }
