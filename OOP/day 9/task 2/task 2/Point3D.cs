@@ -6,9 +6,8 @@ class Point3D : Point
 
     //1
     public Point3D(int _x = 0, int _y = 0, int _z = 0)
+        : base(_x, _y)
     {
-        X = _x;
-        Y = _y;
         Z = _z;
     }
 
@@ -28,12 +27,26 @@ class Point3D : Point
         var right = obj as Point3D;
 
         if (right is null)
+            return false;
+
+        if (object.ReferenceEquals(right, this))
+            return true;
+
+        if (right.GetType() != this.GetType())
         {
             return false;
         }
 
-        Console.WriteLine(obj.ToString());
+        return this.X == right.X && this.Y == right.Y && this.Z == right.Z;
+    }
 
-        return this.X == right.X && this.Y == right.Y && this.Z == right.Y;
+    public static bool operator ==(Point3D right, Point3D left)
+    {
+        return right.Equals(left);
+    }
+
+    public static bool operator !=(Point3D right, Point3D left)
+    {
+        return !right.Equals(left);
     }
 }

@@ -38,14 +38,4 @@ public class Point
 
         return this.X == right.X && this.Y == right.Y;
     }
-
-    public static bool operator ==(Point right, Point left)
-    {
-        return right.Equals(left);
-    }
-
-    public static bool operator !=(Point right, Point left)
-    {
-        return !right.Equals(left);
-    }
 }

@@ -10,18 +10,20 @@ class Program
         // Console.WriteLine(castedString);
         Point3D P1 = new Point3D(1, 2, 3);
         Point3D P2 = new Point3D(1, 2, 3);
+        Console.WriteLine(P1.ToString());
+        Console.WriteLine(P2.ToString());
 
         Console.WriteLine(P1 == P2);
-        Console.WriteLine(P1 != P2);
         if (P1.Equals(P2))
         {
-            Console.WriteLine("EQ");
+            Console.WriteLine("p1 equals p2");
         }
         else
         {
-            Console.WriteLine("NEQ");
+            Console.WriteLine("p1 does not equal p2");
         }
 
+        Console.WriteLine("add points from user");
         Point3D p1 = addPointFromUser();
         Point3D p2 = addPointFromUser();
 

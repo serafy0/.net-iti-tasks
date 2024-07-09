@@ -26,5 +26,16 @@ class Program
         DateTime Obj = (DateTime)D1;
 
         Console.WriteLine(Obj);
+
+
+        //code from task
+        D3=D1+D2
+        D3=D1 + 7800;
+        D3=666+D3;
+        D3=D1++;
+        D3 =--D2;
+        If(D1>D2){Console.WriteLine("D1>D2");}
+        If(D1<=D2){Console.WriteLine("D1<=D2");}
+        DateTime Obj = (DateTime) D1
     }
 }
