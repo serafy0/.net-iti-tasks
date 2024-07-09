@@ -1,9 +1,7 @@
 namespace task_2;
 
-class Point3D
+class Point3D : Point
 {
-    public int X { get; set; }
-    public int Y { get; set; }
     public int Z { get; set; }
 
     //1
@@ -36,6 +34,6 @@ class Point3D
 
         Console.WriteLine(obj.ToString());
 
-        return this.X == right.X && this.Y == right.Y;
+        return this.X == right.X && this.Y == right.Y && this.Z == right.Y;
     }
 }
