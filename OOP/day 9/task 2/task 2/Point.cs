@@ -2,6 +2,6 @@ namespace task_2;
 
 class Point
 {
-    protected int x;
-    protected int y;
+    public int X { get; set; }
+    public int Y { get; set; }
 }
