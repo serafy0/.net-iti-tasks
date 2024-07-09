@@ -34,12 +34,14 @@ public struct Employee
         set { this.gender = value; }
     }
 
+    [Flags]
     public enum SecurityLevel
     {
-        Guest,
-        Developer,
-        Secretary,
-        DBA
+        Guest = 1,
+        Developer = 2,
+        Secretary = 3,
+        DBA = 4,
+        SecurityOfficer = Guest | Developer | Secretary | DBA
     }
 
     private SecurityLevel sLevel;

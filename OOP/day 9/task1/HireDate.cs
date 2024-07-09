@@ -1,6 +1,6 @@
 namespace task1;
 
-public class HireDate
+public struct HireDate
 {
     public int day;
     public int month;
