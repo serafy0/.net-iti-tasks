@@ -19,6 +19,11 @@ static class Math
 
     public static double Divide(double left, double right)
     {
+        if (right == 0)
+        {
+            // throw new Ex
+            throw new DivideByZeroException("error");
+        }
         return (left / right);
     }
 }
