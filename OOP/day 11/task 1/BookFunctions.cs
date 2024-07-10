@@ -16,7 +16,7 @@ public class BookFunctions
         for (int i = 0; i < B.Authors.Length - 1; i++)
         {
             sb.Append(B.Authors[i]);
-            sb.Append(",");
+            sb.Append(", ");
         }
         sb.Append(B.Authors[B.Authors.Length - 1]);
 
