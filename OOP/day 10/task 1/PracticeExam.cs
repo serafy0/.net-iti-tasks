@@ -11,9 +11,9 @@ class PracticeExam : FinalExam
     {
         base.ShowExam();
 
-        foreach ((var _q, var _a) in QuestionsMap)
+        foreach ((Question _q, List<Answer> _a) in QuestionsMap)
         {
-            Console.WriteLine(_q.ToString());
+            Console.WriteLine(_q.Body);
             Console.WriteLine("the correct answer(s) was");
 
             foreach (Answer i in _a)
