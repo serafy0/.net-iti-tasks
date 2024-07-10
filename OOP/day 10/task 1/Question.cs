@@ -38,4 +38,31 @@ abstract class Question
 
         return sb.ToString();
     }
+
+    public char getAnswerFromUser(List<char> alreadyChosen)
+    {
+        bool isValid = false;
+        char ans;
+        do
+        {
+            isValid = char.TryParse(Console.ReadLine(), out ans);
+
+            if (isValid)
+            {
+                foreach (var choice in Choices)
+                {
+                    if (choice.Letter == ans && !alreadyChosen.Contains(ans))
+                    {
+                        return ans;
+                    }
+                    else
+                    {
+                        isValid = false;
+                    }
+                }
+            }
+        } while (!isValid);
+
+        return 'X';
+    }
 }
