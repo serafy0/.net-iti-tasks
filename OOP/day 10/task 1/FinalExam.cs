@@ -17,7 +17,7 @@ class FinalExam : Exam
                 alreadyChosen.Add(newAns);
                 Console.WriteLine("do you want to add another answer? press Y if you do");
                 string doYouWantToContinoue = Console.ReadLine();
-                while (alreadyChosen.Count != _q.Choices.Count || doYouWantToContinoue != "Y")
+                while (alreadyChosen.Count != _q.Choices.Count && doYouWantToContinoue == "Y")
                 {
                     newAns = calcAnswer(_q, _a, alreadyChosen);
                     alreadyChosen.Add(newAns);
