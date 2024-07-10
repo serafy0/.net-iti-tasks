@@ -16,11 +16,15 @@ public class Book
         decimal _Price
     )
     {
-        throw new NotImplementedException();
+        ISBN = _ISBN;
+        Title = _Title;
+        Authors = _Authors;
+        PublicationDate = _PublicationDate;
+        Price = _Price;
     }
 
     public override string ToString()
     {
-        throw new NotImplementedException();
+        return $"{ISBN}\n{Title}\n{BookFunctions.GetAuthors(this)}\n{PublicationDate.ToString()}\n{Price}";
     }
 }
