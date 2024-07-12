@@ -12,7 +12,7 @@ class Program
             1
         );
 
-        Exam ex = new PracticeExam();
+        Exam ex = new FinalExam();
         ex.addQuestion(question1, [question1.Choices[0]]);
 
         Console.WriteLine(question2.Choices[1]);
