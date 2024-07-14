@@ -54,56 +54,6 @@ class Program
         Console.WriteLine($"Maximum number of presents that can be bought: {affordablePresents}");
     }
 
-    // public static float PresentList(
-    //     float budget,
-    //     float bagVolume,
-    //     int people,
-    //     int Npresents,
-    //     float[] presentVolume,
-    //     float[] presentPrice
-    // )
-    // {
-    //     float[,] dp = new float[Npresents + 1, (int)(bagVolume + 1)];
-
-    //     int i,
-    //         w;
-    //     float budgetTaken = 0;
-
-    //     for (i = 0; i <= Npresents; i++)
-    //     {
-    //         if (budgetTaken >= budget)
-    //         {
-    //             break;
-    //         }
-    //         for (w = 0; w < bagVolume; w++)
-    //         {
-    //             if (budgetTaken >= budget)
-    //             {
-    //                 break;
-    //             }
-    //             if (i == 0 || w == 0)
-    //             {
-    //                 dp[i, w] = 0;
-    //             }
-    //             else if (presentVolume[i - 1] <= w)
-    //             {
-    //                 dp[i, w] = Math.Max(
-    //                     presentPrice[i - 1] + dp[i - 1, (int)(w - presentVolume[i - 1])],
-    //                     dp[i - 1, w]
-    //                 );
-
-    //                 budgetTaken += presentPrice[i - 1];
-    //             }
-    //             else
-    //             {
-    //                 dp[i, w] = dp[i - 1, w];
-    //             }
-    //         }
-    //     }
-
-    //     return dp[Npresents, (int)bagVolume];
-    // }
-
     public static float PresentList(
         float budget,
         float bagVolume,
@@ -129,7 +79,6 @@ class Program
                 }
                 else if (presentVolume[i - 1] <= w)
                 {
-                    // Consider only presents that fit within remaining bag capacity
                     dp[i, w] = Math.Max(
                         presentPrice[i - 1] + dp[i - 1, (int)(w - presentVolume[i - 1])],
                         dp[i - 1, w]
@@ -142,13 +91,11 @@ class Program
             }
         }
 
-        // Calculate maximum affordable presents considering bag volume
         float affordablePresentsByVolume = Math.Min(
             totalPresentsNeeded,
             dp[Npresents, (int)bagVolume] / presentPrice[0]
         );
 
-        // Return the maximum price based on affordable presents
         return affordablePresentsByVolume * presentPrice[0];
     }
 }
