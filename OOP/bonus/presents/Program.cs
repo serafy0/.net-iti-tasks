@@ -105,7 +105,7 @@ class Program
         float[] presentPrice
     )
     {
-        float maxSpent = 0;
+        float maxPrice = 0;
         List<int> finalPrices = new List<int>();
         int finalCount = 0;
         int multipleOfPeople = 1;
@@ -141,10 +141,9 @@ class Program
                     }
                 }
             }
-            if (finalPrice > maxSpent)
+            if (finalPrice > maxPrice)
             {
-                maxSpent = finalPrice;
-                float totalPrice = 0;
+                maxPrice = finalPrice;
                 float totalVolume = 0;
                 Console.WriteLine("Price: Volume");
 
@@ -152,14 +151,13 @@ class Program
                 {
                     Console.WriteLine($"{presentPrice[i]}: {presentVolume[i]}");
                     totalVolume += presentVolume[i];
-                    totalPrice += presentPrice[i];
                 }
                 Console.WriteLine($"total volume= {totalVolume}");
-                Console.WriteLine($"total price= {totalPrice}");
+                Console.WriteLine($"total price= {maxPrice}");
                 Console.WriteLine($"final count={finalCount}");
             }
         }
 
-        return maxSpent;
+        return maxPrice;
     }
 }
